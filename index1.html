@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ally Chen Portfolio</title>
+
+<link rel="icon" type="image/png" href="favicon.png">
+
+<style>
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+
+    background: linear-gradient(
+        to bottom,
+        #488ccf 0%,
+        #fee2b5 75%,
+        #febb74 100%
+    );
+
+    background-attachment: fixed;
+    color: #111;
+    line-height: 1.6;
+
+    opacity: 1;
+}
+
+/* LAYOUT */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* NAV (STICKY + LIGHT GLASS) */
+nav {
+    position: sticky;
+    top: 18px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1100px;
+    margin: 18px auto;
+
+    padding: 14px 22px;
+
+    border-radius: 999px;
+
+    backdrop-filter: blur(14px);
+    background: rgba(255,255,255,0.14);
+
+    border: 1px solid rgba(0,0,0,0.06);
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #111;
+    margin-left: 28px;
+    font-weight: 400;
+    transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+/* HERO */
+.hero {
+    padding: 80px 0 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
+}
+
+.hero-intro {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.hero-details {
+    font-size: 16px;
+    color: #2d3748;
+}
+
+/* BUTTONS */
+.hero-actions {
+    margin-top: 24px;
+}
+
+/* PRIMARY BUTTON (View Resume) */
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 26px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    color: #111111;
+
+    font-weight: 600;
+    font-size: 15px;
+
+    text-decoration: none; /* IMPORTANT: removes underline */
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.resume-btn:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255,255,255,0.4);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+
+/* SECONDARY LINK (Explore Projects) */
+.secondary-link {
+    display: inline-block;
+    margin-left: 18px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #2d3748;   /* darker than gray-muted */
+    opacity: 1;       /* IMPORTANT: no fading */
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.secondary-link:hover {
+    color: #111111;
+}
+
+/* AVATAR (CLICKABLE) */
+.avatar-container {
+    flex-shrink: 0;
+}
+
+.avatar-link {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.avatar-link:hover {
+    transform: translateY(-6px);
+}
+
+.avatar {
+    width: 180px;
+    display: block;
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 3.5px;
+    margin-bottom: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    padding-bottom: 120px;
+}
+
+#projects {
+    scroll-margin-top: 120px;
+}
+
+/* CARD */
+.card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.45),
+        rgba(255,255,255,0.15)
+    );
+
+    margin-bottom: 18px;
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.card:hover .image-container {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 18px;
+
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* TEXT */
+.card h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #2d3748;
+}
+
+/* FOOTER */
+footer {
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding: 48px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #2d3748;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-intro {
+        font-size: 20px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 16px 18px;
+        text-align: center;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin-left: 0;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+    }
+
+    nav.nav-hidden {
+    transform: translateY(-140%);
+    opacity: 0;
+    pointer-events: none;
+    }
+
+    #projects {
+        scroll-margin-top: 50px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- NAV -->
+    <nav>
+        <div class="logo">Ally Chen</div>
+
+        <div class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="mailto:allychenwork@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+            <h1>Hi! I'm Ally.</h1>
+
+            <p class="hero-intro">
+                I bridge the gap between business, technology, and design.
+            </p>
+
+            <p class="hero-details">
+                Leveraging data analytics to drive product decisions and human-centered design
+                to craft meaningful user experiences. Graduate of USC Iovine and Young Academy.
+            </p>
+
+            <div class="hero-actions">
+
+                <a
+                    href="https://docs.google.com/document/d/1jmMrPm8q1AU86O-aAbYklMNkjqmQhCYL0oQ6PNlO6_8/preview"
+                    target="_blank"
+                    class="resume-btn">
+
+                    View Resume ↗
+                </a>
+
+                <a href="#projects" class="secondary-link">
+                    Explore Projects ↓
+                </a>
+
+            </div>
+        </div>
+
+        <!-- AVATAR -->
+         
+        <div class="avatar-container">
+            <img src="avatar.png" class="avatar" alt="Ally Chen Avatar">
+        </div>
+
+        <!-- CLICKABLE AVATAR -->
+        <!-- <div class="avatar-container">
+            <a href="avatar-design.html" class="avatar-link">
+                <img src="avatar.png" class="avatar" alt="Avatar Design Project">
+            </a>
+        </div> -->
+
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <div class="section-title">Selected Projects</div>
+
+        <div class="grid">
+
+            <a href="hobbyloop.html" class="card">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop">
+                    <div class="overlay"><div class="overlay-text">View Case Study →</div></div>
+                </div>
+                <h3>HobbyLoop</h3>
+                <p>UI/UX Design • Mobile App</p>
+            </a>
+
+            <a href="eventbud.html" class="card">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop">
+                    <div class="overlay"><div class="overlay-text">View Case Study →</div></div>
+                </div>
+                <h3>EventBud</h3>
+                <p>Product Design • Mobile App</p>
+            </a>
+
+            <a href="wonderful-weddings.html" class="card">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1400&auto=format&fit=crop">
+                    <div class="overlay"><div class="overlay-text">View Case Study →</div></div>
+                </div>
+                <h3>Wonderful Weddings</h3>
+                <p>Web Design • Interaction</p>
+            </a>
+
+            <a href="bluettia-homes.html" class="card">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1400&auto=format&fit=crop">
+                    <div class="overlay"><div class="overlay-text">View Case Study →</div></div>
+                </div>
+                <h3>Bluettia Homes</h3>
+                <p>UI/UX Design • Mobile App</p>
+            </a>
+
+            <a href="avatar-design.html" class="card">
+                <div class="image-container">
+                    <img src="avatar.png" alt="Avatar Design">
+                    <div class="overlay"><div class="overlay-text">View Case Study →</div>
+                    </div>
+                </div>
+                <h3>Avatar Design</h3>
+                <p>Visual Design • Vector Character Assets</p>
+            </a>
+
+            <a href="https://sites.google.com/uci.edu/inf191-w22/camp-izza" target="_blank" class="card">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1400&auto=format&fit=crop" alt="Camp Izza">
+                <div class="overlay"> <div class="overlay-text">View Live Site ↗</div>
+                </div>
+            </div>
+            <h3>Camp Izza ↗</h3>
+            <p>UI/UX & Full-Stack Development • Camp Registration System</p>
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+    <div class="container">
+        © 2026 Ally Chen. All rights reserved.
+    </div>
+</footer>
+
+<script>
+let lastScrollY = window.scrollY;
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        // scrolling DOWN → hide nav
+        nav.classList.add("nav-hidden");
+    } else {
+        // scrolling UP → show nav
+        nav.classList.remove("nav-hidden");
+    }
+
+    lastScrollY = currentScrollY;
+});
+</script>
+
+</body>
+</html>
