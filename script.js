@@ -46,6 +46,11 @@ window.addEventListener("scroll", () => {
 
 // THEME SYSTEM (time + user override)
 
+function updateIcon() {
+    toggle.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
+}
+
+/* initial theme (keep your existing logic if you have time-based theme) */
 const savedTheme = localStorage.getItem("theme");
 const hour = new Date().getHours();
 
@@ -57,7 +62,9 @@ if (savedTheme) {
     }
 }
 
-/* TOGGLE CLICK */
+updateIcon();
+
+/* click toggle */
 toggle.addEventListener("click", () => {
     body.classList.toggle("dark");
 
@@ -65,12 +72,6 @@ toggle.addEventListener("click", () => {
         "theme",
         body.classList.contains("dark") ? "dark" : "light"
     );
-});
 
-function updateIcon() {
-    if (body.classList.contains("dark")) {
-        toggle.textContent = "☀️";
-    } else {
-        toggle.textContent = "🌙";
-    }
-}
+    updateIcon();
+});
