@@ -57,20 +57,15 @@ if (savedTheme) {
     }
 }
 
-updateIcon();
+/* TOGGLE CLICK */
+toggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
 
-/* toggle button */
-if (toggle) {
-    toggle.addEventListener("click", () => {
-        body.classList.toggle("dark");
-
-        localStorage.setItem(
-            "theme",
-            body.classList.contains("dark") ? "dark" : "light"
-        );
-        updateIcon();
-    });
-}
+    localStorage.setItem(
+        "theme",
+        body.classList.contains("dark") ? "dark" : "light"
+    );
+});
 
 function updateIcon() {
     if (body.classList.contains("dark")) {

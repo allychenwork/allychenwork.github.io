@@ -24,6 +24,76 @@ body {
     transition: opacity 0.35s ease;
 }
 
+/* TOGGLE WRAPPER */
+.toggle {
+    width: 52px;
+    height: 30px;
+    border-radius: 999px;
+
+    background: rgba(0,0,0,0.15);
+    border: 1px solid rgba(0,0,0,0.1);
+
+    position: relative;
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+}
+
+/* DARK MODE TRACK */
+body.dark .toggle {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* MOVING CIRCLE */
+.thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+
+    background: white;
+
+    position: absolute;
+    top: 50%;
+    left: 3px;
+
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+/* icon styling */
+.icon {
+    position: absolute;
+    font-size: 14px;
+    transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+/* default (light mode) */
+.sun {
+    opacity: 0;
+    transform: scale(0.6);
+}
+
+.moon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* MOVE THUMB RIGHT IN DARK MODE */
+body.dark .thumb {
+    transform: translate(22px, -50%);
+}
+
+body.dark .sun {
+    opacity: 1;
+    transform: scale(1);
+}
+
+body.dark .moon {
+    opacity: 0;
+    transform: scale(0.6);
+}
+
 body.loaded {
     opacity: 1;
 }
