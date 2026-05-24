@@ -2,6 +2,29 @@ const body = document.body;
 const nav = document.querySelector("nav");
 const toggle = document.getElementById("themeToggle");
 
+// PAGE FADE TRANSITIONS
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("loaded");
+});
+
+document.querySelectorAll("a").forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        document.body.classList.remove("loaded");
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 300);
+    });
+});
+
 // NAV HIDE ON SCROLL (mobile only optional)
 
 let lastScrollY = window.scrollY;
@@ -34,6 +57,8 @@ if (savedTheme) {
     }
 }
 
+updateIcon();
+
 /* toggle button */
 if (toggle) {
     toggle.addEventListener("click", () => {
@@ -43,28 +68,14 @@ if (toggle) {
             "theme",
             body.classList.contains("dark") ? "dark" : "light"
         );
+        updateIcon();
     });
 }
 
-// PAGE FADE TRANSITIONS
-
-document.querySelectorAll("a").forEach(link => {
-    const href = link.getAttribute("href");
-
-    // ignore external links + anchors
-    if (!href || href.startsWith("#") || href.startsWith("http")) return;
-
-    link.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        document.body.classList.add("fade-out");
-
-        setTimeout(() => {
-            window.location.href = href;
-        }, 300); // match CSS duration
-    });
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.remove("fade-out");
-});
+function updateIcon() {
+    if (body.classList.contains("dark")) {
+        toggle.textContent = "☀️";
+    } else {
+        toggle.textContent = "🌙";
+    }
+}
