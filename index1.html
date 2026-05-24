@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ally Chen Portfolio</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Modern Fluid Grid Layout & Typography */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        
+        /* Fixed Gradient Canvas Background */
+        body { 
+            background: linear-gradient(
+                to bottom, 
+                #488ccf 0%, 
+                #fee2b5 75%, 
+                #febb74 100%
+            );
+            background-attachment: fixed;
+            color: #111111; 
+            line-height: 1.6; 
+            min-height: 100vh;
+        }
+
+        
+        /* Layout Structure */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+        
+        /* High-Contrast Navigation Bar */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; }
+        .logo { font-weight: 700; font-size: 20px; text-decoration: none; color: #111111; letter-spacing: -0.5px; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: #111111; /* Changes from gray to crisp charcoal black */
+            margin-left: 32px; 
+            font-weight: 400; /* Makes the letters slightly thinner and cleaner */
+            transition: opacity 0.2s ease; 
+        }
+        .nav-links a:hover { 
+            opacity: 0.6; /* Subtly fades the link when hovering */
+        }
+
+        /* Split Profile Hero Layout */
+        .hero { 
+            padding: 80px 0 100px 0; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            gap: 48px; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            text-align: left;
+        }
+        
+        /* Hero Text Wrapper */
+        .hero-content { flex: 1; }
+        
+        /* Avatar Visual Frame Control */
+        .avatar-container { flex-shrink: 0; }
+        .avatar { width: 180px; height: auto; display: block; object-fit: contain; }
+        
+        .hero h1 { font-size: 54px; font-weight: 700; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 16px; color: #111111; }
+        
+        /* The main bridge statement hook */
+        .hero-intro { font-size: 24px; font-weight: 600; line-height: 1.3; color: #111111; margin-bottom: 12px; letter-spacing: -0.3px; }
+        
+        /* The supportive background details */
+        .hero-details { font-size: 16px; color: #2d3748; font-weight: 400; line-height: 1.6; }
+
+        /* Ultra-Minimalist Text Link */
+        .resume-btn { 
+            display: inline-block; 
+            margin-top: 24px; 
+            padding: 4px 0;
+            background-color: transparent; 
+            color: #111111; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 16px; 
+            border-bottom: 2px solid #111111;
+            transition: all 0.2s ease;
+        }
+        .resume-btn:hover { 
+            opacity: 0.7;
+            transform: translate(3px, -3px); /* Shifts 3px right and 3px up */
+        }
+
+        /* Portfolio Work Section Header */
+        .section-title { 
+            font-size: 17px; 
+            text-transform: uppercase; 
+            letter-spacing: 3.5px; 
+            color: #111111; 
+            margin-bottom: 40px; 
+            font-weight: 600; /* Increased thickness for a polished semi-bold look */
+            text-align: center; 
+        }
+        
+        /* Content Display Grid Layout */
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; padding-bottom: 120px; }
+        
+        /* Project Interactive Exhibition Blocks */
+        .card { text-decoration: none; color: inherit; display: block; }
+        .image-container { 
+            width: 100%; 
+            aspect-ratio: 16 / 10; 
+            background: linear-gradient(135deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 100%);
+            border-radius: 16px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #2d3748; 
+            font-weight: 500; 
+            font-size: 15px; 
+            margin-bottom: 18px; 
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s; 
+            border: 1px solid rgba(255,255,255,0.4); 
+            overflow: hidden;
+        }
+        .card:hover .image-container { 
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            border-color: rgba(255,255,255,0.7);
+            color: #111111;
+        }
+        .card h3 { font-size: 19px; font-weight: 600; margin-bottom: 4px; letter-spacing: -0.3px; color: #111111; }
+        .card p { font-size: 14px; color: #2d3748; }
+
+        /* Unified High-Contrast Footer */
+        footer { border-top: 1px solid rgba(0,0,0,0.06); padding: 48px 0; text-align: center; font-size: 14px; color: #2d3748; }
+        
+        /* Mobile Viewport Sizing Adjustments */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; padding: 40px 0; gap: 24px; }
+            .hero h1 { font-size: 32px; }
+            .grid { grid-template-columns: 1fr; gap: 32px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER MODULE -->
+        <nav>
+            <a href="#" class="logo">Ally Chen</a>
+            <div class="nav-links">
+                <a href="#">Projects</a>
+                <a href="#">About</a>
+                <a href="mailto:allychenwork@gmail.com">Contact</a>
+            </div>
+        </nav>
+
+        <!-- IDENTITY INTRODUCTION HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hi! I'm Ally.</h1>
+                <p class="hero-intro">I bridge the gap between business, technology, and design.</p>
+                <p class="hero-details">Leveraging data analytics to drive product decisions and human-centered design to craft meaningful user experiences. Graduate of the USC Iovine and Young Academy.</p>
+                
+                <!-- RESUME ACTION BUTTON -->
+                <a href="https://docs.google.com/document/d/1jmMrPm8q1AU86O-aAbYklMNkjqmQhCYL0oQ6PNlO6_8/preview" target="_blank" class="resume-btn">Resume &nearr;</a>
+            </div>            
+            <!-- Avatar sits second in code for right placement -->
+            <div class="avatar-container">
+                <img src="avatar.png" alt="Ally Chen Avatar" class="avatar">
+            </div>
+        </section>
+
+        <!-- PORTFOLIO PROJECTS SHOWCASE EXHIBIT -->
+        <main>
+            <div class="section-title">Projects</div>
+            <div class="grid">
+                
+                <!-- Project 1: HobbyLoop -->
+                <a href="hobbyloop.html" class="card">
+                    <div class="image-container">HobbyLoop Cover Image</div>
+                    <h3>HobbyLoop</h3>
+                    <p>UI/UX Design • Mobile App Design</p>
+                </a>
+
+                <!-- Project 2: Wonderful Weddings -->
+                <a href="wonderful-weddings.html" class="card">
+                    <div class="image-container">Wonderful Weddings Cover Image</div>
+                    <h3>Wonderful Weddings</h3>
+                    <p>Web Design • Interactive Interface</p>
+                </a>
+
+                <!-- Project 3: EventBud -->
+                <a href="eventbud.html" class="card">
+                    <div class="image-container">EventBud Cover Image</div>
+                    <h3>EventBud</h3>
+                    <p>UI/UX Design • Mobile App Design</p>
+                </a>
+
+                <!-- Project 4: Bluettia Homes -->
+                <a href="bluettia-homes.html" class="card">
+                    <div class="image-container">Bluettia Homes Cover Image</div>
+                    <h3>Bluettia Homes</h3>
+                    <p>UI/UX Design • Mobile App Design</p>
+                </a>
+
+                <!-- Project 5: Avatar Design -->
+                <a href="avatar-design.html" class="card">
+                    <div class="image-container">Avatar Design Cover Image</div>
+                    <h3>Avatar Design</h3>
+                    <p>Visual Design • Vector Character Assets</p>
+                </a>
+
+                <!-- Project 6: Camp Izza (Direct Redirection Target) -->
+                <a href="https://sites.google.com/uci.edu/inf191-w22/camp-izza" target="_blank" class="card">
+                    <div class="image-container">Camp Izza Cover Image (External Link)</div>
+                    <h3>Camp Izza</h3>
+                    <p>UX/UI & Full-Stack Development • Camp Registration System &nearr;</p>
+                </a>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER MODULE -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ally Chen</p>
+        </div>
+    </footer>
+
+</body>
+</html>
