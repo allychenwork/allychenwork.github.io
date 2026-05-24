@@ -2,9 +2,8 @@ const body = document.body;
 const nav = document.querySelector("nav");
 const toggle = document.getElementById("themeToggle");
 
-/* ---------------------------
-   NAV HIDE ON SCROLL (mobile only optional)
-----------------------------*/
+// NAV HIDE ON SCROLL (mobile only optional)
+
 let lastScrollY = window.scrollY;
 
 window.addEventListener("scroll", () => {
@@ -21,9 +20,9 @@ window.addEventListener("scroll", () => {
     lastScrollY = currentScrollY;
 });
 
-/* ---------------------------
-   THEME SYSTEM (time + user override)
-----------------------------*/
+
+// THEME SYSTEM (time + user override)
+
 const savedTheme = localStorage.getItem("theme");
 const hour = new Date().getHours();
 
@@ -46,3 +45,26 @@ if (toggle) {
         );
     });
 }
+
+// PAGE FADE TRANSITIONS
+
+document.querySelectorAll("a").forEach(link => {
+    const href = link.getAttribute("href");
+
+    // ignore external links + anchors
+    if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 300); // match CSS duration
+    });
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.remove("fade-out");
+});
