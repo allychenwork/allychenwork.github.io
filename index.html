@@ -34,6 +34,8 @@ body {
     background-attachment: fixed;
     color: #111;
     line-height: 1.6;
+
+    opacity: 1;
 }
 
 /* LAYOUT */
@@ -210,12 +212,16 @@ nav {
     text-align: center;
 }
 
-/* GRID (4 PROJECTS) */
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
     padding-bottom: 120px;
+}
+
+#projects {
+    scroll-margin-top: 120px;
 }
 
 /* CARD */
@@ -354,6 +360,10 @@ footer {
     transform: translateY(-140%);
     opacity: 0;
     pointer-events: none;
+    }
+
+    #projects {
+        scroll-margin-top: 50px;
     }
 }
 

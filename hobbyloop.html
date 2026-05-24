@@ -1,221 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HobbyLoop Case Study | Ally Chen Portfolio</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HobbyLoop Case Study | Ally Chen Portfolio</title>
+<link rel="icon" type="image/png" href="favicon.png">
 
-    <style>
+<style>
 
-    /* RESET */
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
-    }
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
 
-    html {
-        scroll-behavior: smooth;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    body {
-        background: linear-gradient(
-            to bottom,
-            #488ccf 0%,
-            #fee2b5 75%,
-            #febb74 100%
-        );
+body {
+    background: linear-gradient(
+        to bottom,
+        #488ccf 0%,
+        #fee2b5 75%,
+        #febb74 100%
+    );
 
-        background-attachment: fixed;
-        color: #111111;
-        line-height: 1.7;
-        min-height: 100vh;
-    }
+    background-attachment: fixed;
+    color: #111111;
+    line-height: 1.7;
+    min-height: 100vh;
 
-    /* STRUCTURE */
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 32px;
-    }
+    opacity: 1;
+}
 
-    /* NAV (UPDATED TO MATCH HOMEPAGE STYLE) */
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+/* STRUCTURE */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
 
-        padding: 14px 22px;
-        margin: 18px 0;
+/* NAV (UPDATED TO MATCH HOMEPAGE STYLE) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        position: sticky;
-        top: 18px;
-        z-index: 1000;
+    padding: 14px 22px;
+    margin: 18px 0;
 
-        border-radius: 999px;
+    position: sticky;
+    top: 18px;
+    z-index: 1000;
 
-        backdrop-filter: blur(14px);
-        background: rgba(255,255,255,0.14);
+    border-radius: 999px;
 
-        border: 1px solid rgba(0,0,0,0.06);
-        box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-    }
+    backdrop-filter: blur(14px);
+    background: rgba(255,255,255,0.14);
 
-    .logo {
-        font-weight: 700;
-        font-size: 20px;
-        text-decoration: none;
-        color: #111111;
-        letter-spacing: -0.5px;
-    }
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
 
-    .back-link {
-        text-decoration: none;
-        color: #111111;
-        font-weight: 600;
-        font-size: 15px;
-        transition: opacity 0.2s;
-    }
+.logo {
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+    color: #111111;
+    letter-spacing: -0.5px;
+}
 
-    .back-link:hover {
-        opacity: 0.6;
-    }
+.back-link {
+    text-decoration: none;
+    color: #111111;
+    font-weight: 600;
+    font-size: 15px;
+    transition: opacity 0.2s;
+}
 
-    /* HERO */
-    .project-hero {
-        padding: 40px 0 20px 0;
-    }
+.back-link:hover {
+    opacity: 0.6;
+}
 
+/* HERO */
+.project-hero {
+    padding: 40px 0 20px 0;
+}
+
+.project-hero h1 {
+    font-size: 54px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.project-tagline {
+    font-size: 22px;
+    color: #111111;
+    font-weight: 600;
+    margin-bottom: 32px;
+    letter-spacing: -0.3px;
+}
+
+/* META GRID */
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    padding: 24px 0;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+
+    margin-bottom: 60px;
+}
+
+.meta-item h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.meta-item p {
+    font-size: 14px;
+    color: #2d3748;
+}
+
+/* CONTENT */
+.content-section {
+    margin-bottom: 60px;
+}
+
+.content-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.content-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.content-section p {
+    font-size: 16px;
+    color: #2d3748;
+    margin-bottom: 20px;
+}
+
+.content-section ul {
+    margin-left: 20px;
+    color: #2d3748;
+}
+
+.content-section li {
+    margin-bottom: 8px;
+}
+
+/* IMAGES */
+.project-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+
+    border-radius: 16px;
+    overflow: hidden;
+
+    margin: 32px 0 48px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.45),
+        rgba(255,255,255,0.15)
+    );
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.04);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding: 48px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #2d3748;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
     .project-hero h1 {
-        font-size: 54px;
-        font-weight: 700;
-        letter-spacing: -1.5px;
-        line-height: 1.1;
-        margin-bottom: 16px;
+        font-size: 38px;
     }
 
-    .project-tagline {
-        font-size: 22px;
-        color: #111111;
-        font-weight: 600;
-        margin-bottom: 32px;
-        letter-spacing: -0.3px;
-    }
-
-    /* META GRID */
     .meta-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
-
-        padding: 24px 0;
-        border-top: 1px solid rgba(0,0,0,0.08);
-        border-bottom: 1px solid rgba(0,0,0,0.08);
-
-        margin-bottom: 60px;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .meta-item h4 {
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        font-weight: 700;
-        margin-bottom: 8px;
+    nav {
+        transition: transform 0.25s ease, opacity 0.25s ease;
     }
 
-    .meta-item p {
-        font-size: 14px;
-        color: #2d3748;
+    nav.nav-hidden {
+    transform: translateY(-140%);
+    opacity: 0;
+    pointer-events: none;
     }
+}
 
-    /* CONTENT */
-    .content-section {
-        margin-bottom: 60px;
-    }
-
-    .content-section h2 {
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 18px;
-    }
-
-    .content-section h3 {
-        font-size: 20px;
-        font-weight: 600;
-        margin-top: 24px;
-        margin-bottom: 12px;
-    }
-
-    .content-section p {
-        font-size: 16px;
-        color: #2d3748;
-        margin-bottom: 20px;
-    }
-
-    .content-section ul {
-        margin-left: 20px;
-        color: #2d3748;
-    }
-
-    .content-section li {
-        margin-bottom: 8px;
-    }
-
-    /* IMAGES */
-    .project-image {
-        width: 100%;
-        aspect-ratio: 16 / 10;
-
-        border-radius: 16px;
-        overflow: hidden;
-
-        margin: 32px 0 48px 0;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        background: linear-gradient(
-            135deg,
-            rgba(255,255,255,0.45),
-            rgba(255,255,255,0.15)
-        );
-
-        border: 1px solid rgba(255,255,255,0.4);
-
-        box-shadow: 0 15px 30px rgba(0,0,0,0.04);
-    }
-
-    .project-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* FOOTER */
-    footer {
-        border-top: 1px solid rgba(0,0,0,0.06);
-        padding: 48px 0;
-        text-align: center;
-        font-size: 14px;
-        color: #2d3748;
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-        .project-hero h1 {
-            font-size: 38px;
-        }
-
-        .meta-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    </style>
+</style>
 </head>
 
 <body>
@@ -305,6 +317,25 @@
         © 2026 Ally Chen. All rights reserved.
     </div>
 </footer>
+
+<script>
+let lastScrollY = window.scrollY;
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        // scrolling DOWN → hide nav
+        nav.classList.add("nav-hidden");
+    } else {
+        // scrolling UP → show nav
+        nav.classList.remove("nav-hidden");
+    }
+
+    lastScrollY = currentScrollY;
+});
+</script>
 
 </body>
 </html>
