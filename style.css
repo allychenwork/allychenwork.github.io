@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --bg: linear-gradient(to bottom, #488ccf 0%, #fee2b5 75%, #febb74 100%);
     --text: #111;
@@ -357,12 +361,32 @@ nav {
     margin-bottom: 16px;
 }
 
-.project-tagline {
-    font-size: 22px;
-    color: #111111;
+.project-slogan {
+    font-size: 24px;
     font-weight: 600;
-    margin-bottom: 32px;
-    letter-spacing: -0.3px;
+    margin-bottom: 14px;
+    letter-spacing: -0.4px;
+}
+
+.project-tagline {
+    font-size: 17px;
+    color: #2d3748;
+    line-height: 1.6;
+    max-width: 650px;
+}
+
+.project-banner {
+    width: 100%;
+    margin: 0 auto 32px auto;
+
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.project-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* META GRID */
