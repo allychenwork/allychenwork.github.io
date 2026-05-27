@@ -25,6 +25,15 @@ document.querySelectorAll("a").forEach(link => {
     });
 });
 
+// Handle back/forward cache to prevent stuck fade-out state
+
+window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+        document.body.classList.remove("fade-out");
+        document.body.classList.add("loaded");
+    }
+});
+
 // NAV HIDE ON SCROLL (mobile only optional)
 
 let lastScrollY = window.scrollY;

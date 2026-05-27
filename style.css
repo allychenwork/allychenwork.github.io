@@ -553,4 +553,9 @@ footer {
     .meta-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* Fixed gradient background */
+    body {
+        background-attachment: scroll;
+    }
 }
