@@ -130,13 +130,14 @@ function showImage() {
     renderDots();
 }
 
-function closeLightbox() {
+function closeLightbox(e) {
+    if (e && e.target !== e.currentTarget) return;
+
     const lightbox = document.getElementById("lightbox");
 
     lightbox.classList.remove("active");
     document.body.style.overflow = "";
 
-    // remove listeners to avoid stacking
     lightbox.removeEventListener("touchstart", handleTouchStart);
     lightbox.removeEventListener("touchend", handleTouchEnd);
 }
