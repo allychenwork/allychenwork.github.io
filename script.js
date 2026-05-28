@@ -124,7 +124,8 @@ function showImage() {
     const img = document.getElementById("lightbox-img");
     img.src = currentGallery[currentIndex].src;
 
-    updateNavButtons();
+    // updateNavButtons();
+    renderDots();
 }
 
 function closeLightbox() {
@@ -236,4 +237,27 @@ function edgeBounce(direction) {
     setTimeout(() => {
         img.style.transform = "translateX(0)";
     }, 150);
+}
+
+function renderDots() {
+    const container = document.getElementById("lightbox-dots");
+    container.innerHTML = "";
+
+    currentGallery.forEach((_, index) => {
+        const dot = document.createElement("div");
+
+        dot.classList.add("lightbox-dot");
+
+        if (index === currentIndex) {
+            dot.classList.add("active");
+        }
+
+        dot.addEventListener("click", (e) => {
+            e.stopPropagation();
+            currentIndex = index;
+            showImage();
+        });
+
+        container.appendChild(dot);
+    });
 }
