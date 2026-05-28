@@ -758,4 +758,20 @@ footer {
     /* #lightbox::after {
         display: none;
     } */
+    
+    .back-to-top-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+
+        width: 54px;
+        height: 54px;
+
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+
+        text-decoration: none;
+
+        z-index: 9998;
+    }
 }
