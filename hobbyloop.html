@@ -115,9 +115,16 @@
 </div>
 
 <div id="lightbox" onclick="closeLightbox()">
-    <button class="nav left" onclick="event.stopPropagation(); prevImage()">‹</button>
-    <img id="lightbox-img" alt="zoomed image">
-    <button class="nav right" onclick="event.stopPropagation(); nextImage()">›</button>
+
+    <div id="lightbox-track">
+        <img id="lightbox-img">
+    </div>
+
+    <div class="lightbox-controls" onclick="event.stopPropagation()">
+        <button class="nav" onclick="prevImage()">‹</button>
+        <button class="nav" onclick="nextImage()">›</button>
+    </div>
+
 </div>
 
 <footer>

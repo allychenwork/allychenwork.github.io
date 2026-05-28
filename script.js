@@ -138,14 +138,27 @@ function closeLightbox() {
     lightbox.removeEventListener("touchend", handleTouchEnd);
 }
 
+// function updateNavButtons() {
+//     const leftBtn = document.querySelector("#lightbox .left");
+//     const rightBtn = document.querySelector("#lightbox .right");
+
+//     if (!currentGallery || currentGallery.length === 0) return;
+
+//     leftBtn.style.display = currentIndex === 0 ? "none" : "block";
+//     rightBtn.style.display = currentIndex === currentGallery.length - 1 ? "none" : "block";
+// }
+
 function updateNavButtons() {
-    const leftBtn = document.querySelector("#lightbox .left");
-    const rightBtn = document.querySelector("#lightbox .right");
+    const leftBtn = document.querySelector(".lightbox-controls .nav:first-child");
+    const rightBtn = document.querySelector(".lightbox-controls .nav:last-child");
 
     if (!currentGallery || currentGallery.length === 0) return;
 
-    leftBtn.style.display = currentIndex === 0 ? "none" : "block";
-    rightBtn.style.display = currentIndex === currentGallery.length - 1 ? "none" : "block";
+    leftBtn.style.opacity = currentIndex === 0 ? "0.3" : "1";
+    leftBtn.style.pointerEvents = currentIndex === 0 ? "none" : "auto";
+
+    rightBtn.style.opacity = currentIndex === currentGallery.length - 1 ? "0.3" : "1";
+    rightBtn.style.pointerEvents = currentIndex === currentGallery.length - 1 ? "none" : "auto";
 }
 
 document.addEventListener("keydown", function (event) {
