@@ -5,19 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HobbyLoop Case Study | Ally Chen Portfolio</title>
 <link rel="icon" type="image/png" href="favicon.png">
-<script>
-// (function () {
-//     const savedTheme = localStorage.getItem("theme");
-
-//     if (
-//         savedTheme === "dark" ||
-//         (!savedTheme &&
-//          window.matchMedia("(prefers-color-scheme: dark)").matches)
-//     ) {
-//         document.documentElement.classList.add("dark");
-//     }
-// })();
-</script>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -89,14 +76,10 @@
             <p>​​​​​​When developing the concept for this app, I started with a specific target audience of people who want to learn K-Pop dances. I started by creating a visual model of the potential stakeholders. </p>
         </section>
 
-        <div class="image-grid">
-            <!-- <a href="assets/hobbyloop/01-ideation/01-stakeholders.png" target="_blank">
-                <img src="assets/hobbyloop/01-ideation/01-stakeholders.png" alt="Stakeholder Map" class="zoomable">
-            </a> -->
+        <!-- <div class="image-grid">
             <img src="assets/hobbyloop/01-ideation/01-stakeholders.png" alt="Stakeholder Map" class="zoomable" onclick="openLightbox(this)">
-            <!-- <img src="assets/hobbyloop/01-ideation/01-stakeholders.png" alt="Stakeholder Map"> -->
             <img src="assets/hobbyloop/01-ideation/02-visual-diagram.png" alt="Visual Diagram" class="zoomable" onclick="openLightbox(this)">
-        </div>
+        </div> -->
 
         <div class="image-grid">
             <img src="assets/hobbyloop/01-ideation/01-stakeholders.png"
@@ -133,7 +116,7 @@
 
 <div id="lightbox" onclick="closeLightbox()">
     <button class="nav left" onclick="event.stopPropagation(); prevImage()">‹</button>
-    <img id="lightbox-img">
+    <img id="lightbox-img" alt="zoomed image">
     <button class="nav right" onclick="event.stopPropagation(); nextImage()">›</button>
 </div>
 

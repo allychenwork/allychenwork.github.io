@@ -109,10 +109,15 @@ function openLightbox(img) {
 
     currentIndex = currentGallery.indexOf(img);
 
+    const lightbox = document.getElementById("lightbox");
+
     showImage();
 
-    document.getElementById("lightbox").classList.add("active");
+    lightbox.classList.add("active");
     document.body.style.overflow = "hidden";
+
+    lightbox.addEventListener("touchstart", handleTouchStart, { passive: true });
+    lightbox.addEventListener("touchend", handleTouchEnd);
 }
 
 function showImage() {
@@ -121,8 +126,14 @@ function showImage() {
 }
 
 function closeLightbox() {
-    document.getElementById("lightbox").classList.remove("active");
+    const lightbox = document.getElementById("lightbox");
+
+    lightbox.classList.remove("active");
     document.body.style.overflow = "";
+
+    // remove listeners to avoid stacking
+    lightbox.removeEventListener("touchstart", handleTouchStart);
+    lightbox.removeEventListener("touchend", handleTouchEnd);
 }
 
 document.addEventListener("keydown", function (event) {
@@ -148,3 +159,30 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") prevImage();
     if (e.key === "Escape") closeLightbox();
 });
+
+// Mobile swipe lightbox navigation
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+function handleTouchStart(e) {
+    touchStartX = e.changedTouches[0].screenX;
+}
+
+function handleTouchEnd(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}
+
+function handleSwipe() {
+    const swipeDistance = touchStartX - touchEndX;
+
+    // threshold so tiny movements don't trigger swipe
+    if (Math.abs(swipeDistance) < 50) return;
+
+    if (swipeDistance > 0) {
+        nextImage(); // swipe left
+    } else {
+        prevImage(); // swipe right
+    }
+}
