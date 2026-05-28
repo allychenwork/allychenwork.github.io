@@ -123,6 +123,8 @@ function openLightbox(img) {
 function showImage() {
     const img = document.getElementById("lightbox-img");
     img.src = currentGallery[currentIndex].src;
+
+    updateNavButtons();
 }
 
 function closeLightbox() {
@@ -134,6 +136,16 @@ function closeLightbox() {
     // remove listeners to avoid stacking
     lightbox.removeEventListener("touchstart", handleTouchStart);
     lightbox.removeEventListener("touchend", handleTouchEnd);
+}
+
+function updateNavButtons() {
+    const leftBtn = document.querySelector("#lightbox .left");
+    const rightBtn = document.querySelector("#lightbox .right");
+
+    if (!currentGallery || currentGallery.length === 0) return;
+
+    leftBtn.style.display = currentIndex === 0 ? "none" : "block";
+    rightBtn.style.display = currentIndex === currentGallery.length - 1 ? "none" : "block";
 }
 
 document.addEventListener("keydown", function (event) {
