@@ -62,13 +62,20 @@ document.querySelectorAll("a").forEach(link => {
 
         e.preventDefault();
 
-        document.body.style.opacity = 0;
+        document.body.classList.remove("loaded");
 
         setTimeout(() => {
             window.location.href = href;
         }, 300);
     });
 });
+
+function showPage() {
+    document.body.classList.add("loaded");
+}
+
+document.addEventListener("DOMContentLoaded", showPage);
+window.addEventListener("pageshow", showPage);
 
 // Handle back/forward cache to prevent stuck fade-out state
 
