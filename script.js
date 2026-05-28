@@ -132,10 +132,16 @@ function showImage() {
 }
 
 function closeLightbox(e) {
-    // if (e && e.target !== e.currentTarget) return;
-
     const lightbox = document.getElementById("lightbox");
+    // const isMobile = window.innerWidth <= 768;
+    const isMobile = ("ontouchstart" in window) || window.innerWidth <= 768;
 
+    if (!isMobile) {
+        // Desktop: only close background click
+        if (e && e.target !== e.currentTarget) return;
+    }
+
+    // Mobile: ignore target, always close
     lightbox.classList.remove("active");
     document.body.style.overflow = "";
 
