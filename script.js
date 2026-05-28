@@ -157,13 +157,17 @@ document.addEventListener("keydown", function (event) {
 });
 
 function nextImage() {
-    currentIndex = (currentIndex + 1) % currentGallery.length;
-    showImage();
+    if (currentIndex < currentGallery.length - 1) {
+        currentIndex++;
+        showImage("next");
+    }
 }
 
 function prevImage() {
-    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-    showImage();
+    if (currentIndex > 0) {
+        currentIndex--;
+        showImage("prev");
+    }
 }
 
 document.addEventListener("keydown", (e) => {
@@ -189,12 +193,34 @@ function handleTouchEnd(e) {
 function handleSwipe() {
     const swipeDistance = touchStartX - touchEndX;
 
-    // threshold so tiny movements don't trigger swipe
     if (Math.abs(swipeDistance) < 50) return;
 
     if (swipeDistance > 0) {
-        nextImage(); // swipe left
+        if (currentIndex < currentGallery.length - 1) {
+            currentIndex++;
+            showImage("next");
+        } else {
+            edgeBounce("next");
+        }
     } else {
-        prevImage(); // swipe right
+        if (currentIndex > 0) {
+            currentIndex--;
+            showImage("prev");
+        } else {
+            edgeBounce("prev");
+        }
     }
+}
+
+function edgeBounce(direction) {
+    const img = document.getElementById(activeSlot === "A" ? "imgA" : "imgB");
+
+    img.style.transition = "transform 0.15s ease";
+    img.style.transform = direction === "next"
+        ? "translateX(-8px)"
+        : "translateX(8px)";
+
+    setTimeout(() => {
+        img.style.transform = "translateX(0)";
+    }, 150);
 }
