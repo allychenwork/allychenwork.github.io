@@ -133,6 +133,11 @@ nav {
     opacity: 0.6;
 }
 
+.nav-links a.active {
+    opacity: 1;
+    font-weight: 500;
+}
+
 /* INDEX PAGE */
 /* HERO */
 .hero {

@@ -53,15 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.querySelectorAll("a").forEach(link => {
-    const href = link.getAttribute("href");
-
-    if (!href || href.startsWith("#") || href.startsWith("http")) return;
-
     link.addEventListener("click", (e) => {
+
+        const href = link.getAttribute("href");
+
+        // ignore external links + hash links
+        if (!href || href.startsWith("#") || href.includes("#")) return;
+
         e.preventDefault();
 
-        document.body.classList.remove("loaded");
-        document.body.classList.add("fade-out");
+        document.body.style.opacity = 0;
 
         setTimeout(() => {
             window.location.href = href;
