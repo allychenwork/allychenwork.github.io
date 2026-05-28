@@ -350,7 +350,7 @@ nav {
 /* PROJECT PAGES */
 /* HERO */
 .project-hero {
-    padding: 40px 0 20px 0;
+    padding: 40px 0 0 0;
 }
 
 .project-hero h1 {
@@ -400,7 +400,7 @@ nav {
     border-top: 1px solid rgba(0,0,0,0.08);
     border-bottom: 1px solid rgba(0,0,0,0.08);
 
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
 }
 
 .meta-item h4 {
@@ -417,9 +417,9 @@ nav {
 }
 
 /* CONTENT */
-.content-section {
-    margin-bottom: 60px;
-}
+/* .content-section {
+    margin-top: 60px;
+} */
 
 .content-section h2 {
     font-size: 28px;
@@ -478,6 +478,48 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.image-grid img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* LIGHTBOX */
+
+.zoomable {
+    cursor: pointer;
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+}
+
+.zoomable:hover {
+    transform: scale(1.02);
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
 }
 
 

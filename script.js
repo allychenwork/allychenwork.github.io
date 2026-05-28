@@ -84,3 +84,24 @@ toggle.addEventListener("click", () => {
 
     updateIcon();
 });
+
+// LIGHTBOX
+
+function openLightbox(img) {
+    document.getElementById("lightbox-img").src = img.src;
+    document.getElementById("lightbox").style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+    document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function (event) {
+    const lightbox = document.getElementById("lightbox");
+
+    if (event.key === "Escape" && lightbox.style.display === "flex") {
+        closeLightbox();
+    }
+});
