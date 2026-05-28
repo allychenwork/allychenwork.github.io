@@ -2,6 +2,48 @@ const body = document.body;
 const nav = document.querySelector("nav");
 const toggle = document.getElementById("themeToggle");
 
+// THEME SYSTEM (time + user override)
+
+function updateIcon() {
+    toggle.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
+}
+
+/* initial theme (keep your existing logic if you have time-based theme) */
+const savedTheme = localStorage.getItem("theme");
+const hour = new Date().getHours();
+
+if (savedTheme) {
+    body.classList.toggle("dark", savedTheme === "dark");
+} else {
+    if (hour >= 18 || hour < 6) {
+        body.classList.add("dark");
+    }
+}
+
+updateIcon();
+
+/* click toggle */
+toggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
+
+    localStorage.setItem(
+        "theme",
+        body.classList.contains("dark") ? "dark" : "light"
+    );
+
+    updateIcon();
+});
+
+// window.addEventListener("pageshow", () => {
+//     const savedTheme = localStorage.getItem("theme");
+
+//     if (savedTheme === "dark") {
+//         document.documentElement.classList.add("dark");
+//     } else {
+//         document.documentElement.classList.remove("dark");
+//     }
+// });
+
 // PAGE FADE TRANSITIONS
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -52,38 +94,6 @@ window.addEventListener("scroll", () => {
     lastScrollY = currentScrollY;
 });
 
-
-// THEME SYSTEM (time + user override)
-
-function updateIcon() {
-    toggle.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
-}
-
-/* initial theme (keep your existing logic if you have time-based theme) */
-const savedTheme = localStorage.getItem("theme");
-const hour = new Date().getHours();
-
-if (savedTheme) {
-    body.classList.toggle("dark", savedTheme === "dark");
-} else {
-    if (hour >= 18 || hour < 6) {
-        body.classList.add("dark");
-    }
-}
-
-updateIcon();
-
-/* click toggle */
-toggle.addEventListener("click", () => {
-    body.classList.toggle("dark");
-
-    localStorage.setItem(
-        "theme",
-        body.classList.contains("dark") ? "dark" : "light"
-    );
-
-    updateIcon();
-});
 
 // LIGHTBOX
 
