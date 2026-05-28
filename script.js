@@ -132,7 +132,7 @@ function showImage() {
 }
 
 function closeLightbox(e) {
-    if (e && e.target !== e.currentTarget) return;
+    // if (e && e.target !== e.currentTarget) return;
 
     const lightbox = document.getElementById("lightbox");
 
