@@ -97,14 +97,31 @@ window.addEventListener("scroll", () => {
 
 // LIGHTBOX
 
+let currentIndex = 0;
+let currentGallery = [];
+
 function openLightbox(img) {
-    document.getElementById("lightbox-img").src = img.src;
-    document.getElementById("lightbox").style.display = "flex";
+    const galleryName = img.dataset.gallery;
+
+    currentGallery = Array.from(
+        document.querySelectorAll(`[data-gallery="${galleryName}"]`)
+    );
+
+    currentIndex = currentGallery.indexOf(img);
+
+    showImage();
+
+    document.getElementById("lightbox").classList.add("active");
     document.body.style.overflow = "hidden";
 }
 
+function showImage() {
+    const img = document.getElementById("lightbox-img");
+    img.src = currentGallery[currentIndex].src;
+}
+
 function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
+    document.getElementById("lightbox").classList.remove("active");
     document.body.style.overflow = "";
 }
 
@@ -114,4 +131,20 @@ document.addEventListener("keydown", function (event) {
     if (event.key === "Escape" && lightbox.style.display === "flex") {
         closeLightbox();
     }
+});
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    showImage();
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    showImage();
+}
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") nextImage();
+    if (e.key === "ArrowLeft") prevImage();
+    if (e.key === "Escape") closeLightbox();
 });

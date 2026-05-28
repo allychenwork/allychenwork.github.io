@@ -98,7 +98,19 @@
             <img src="assets/hobbyloop/01-ideation/02-visual-diagram.png" alt="Visual Diagram" class="zoomable" onclick="openLightbox(this)">
         </div>
 
+        <div class="image-grid">
+            <img src="assets/hobbyloop/01-ideation/01-stakeholders.png"
+                alt="Stakeholder Map"
+                class="zoomable"
+                data-gallery="ideation"
+                onclick="openLightbox(this)">
 
+            <img src="assets/hobbyloop/01-ideation/02-visual-diagram.png"
+                alt="Visual Diagram"
+                class="zoomable"
+                data-gallery="ideation"
+                onclick="openLightbox(this)">
+        </div>
 
 
 
@@ -120,7 +132,9 @@
 </div>
 
 <div id="lightbox" onclick="closeLightbox()">
+    <button class="nav left" onclick="event.stopPropagation(); prevImage()">‹</button>
     <img id="lightbox-img">
+    <button class="nav right" onclick="event.stopPropagation(); nextImage()">›</button>
 </div>
 
 <footer>
