@@ -2,6 +2,8 @@ const body = document.body;
 const nav = document.querySelector("nav");
 const toggle = document.getElementById("themeToggle");
 
+document.getElementById("year").textContent = new Date().getFullYear();
+
 // THEME SYSTEM (time + user override)
 
 function updateIcon() {
@@ -261,3 +263,29 @@ function renderDots() {
         container.appendChild(dot);
     });
 }
+
+// BACK TO TOP BUTTON
+
+document.querySelectorAll('a[href="#top"]').forEach(el => {
+    el.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        document.getElementById("top").scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
+
+// only shows after scrolling 
+
+const btn = document.querySelector(".back-to-top-float");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        btn.style.opacity = "1";
+        btn.style.pointerEvents = "auto";
+    } else {
+        btn.style.opacity = "0";
+        btn.style.pointerEvents = "none";
+    }
+});
