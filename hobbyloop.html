@@ -143,30 +143,47 @@
             style="border:0;">
         </iframe>
 
-
-
-
-
-
         <section class="content-section">
-            <h2>User Research</h2>
+            <h2>Personas</h2>
+            <p>Then, we created personas to empathize with potential end users. We designed three different personas:</p>
             <ul>
-                <li><strong>Fragmented Identity:</strong> Multiple platforms needed</li>
-                <li><strong>Safety Concerns:</strong> Lack of trust systems</li>
-                <li><strong>Discovery Friction:</strong> Hard to find niche groups</li>
+                <li><strong>Felix Brown</strong>, the beginner dancer</li>
+                <li><strong>Danielle March</strong>, the experienced dancer</li>
+                <li><strong>Ocean Lee</strong>, the dance teacher</li>
             </ul>
         </section>
 
-        <div class="project-image">
-            <img src="hobbyloop-research.png" alt="">
+        <div class="image-grid">
+            <img src="assets/hobbyloop/04-personas/01.png"
+                alt="Persona: Felix Brown"
+                class="zoomable"
+                data-gallery="personas"
+                onclick="openLightbox(this)">
+
+            <img src="assets/hobbyloop/04-personas/02.png"
+                alt="Persona: Danielle March"
+                class="zoomable"
+                data-gallery="personas"
+                onclick="openLightbox(this)">
+
+            <img src="assets/hobbyloop/04-personas/03.png"
+                alt="Persona: Ocean Lee"
+                class="zoomable"
+                data-gallery="personas"
+                onclick="openLightbox(this)">
         </div>
+
+
+
+        <!-- <div class="project-image">
+            <img src="hobbyloop-research.png" alt="">
+        </div> -->
 
     </main>
 
 </div>
 
 <div id="lightbox" onclick="closeLightbox()">
-// removed the (event) parameter for click anywhere to close
     <div id="lightbox-track">
         <img id="lightbox-img">
     </div>
@@ -177,7 +194,6 @@
         <button class="nav" onclick="prevImage()">‹</button>
         <button class="nav" onclick="nextImage()">›</button>
     </div>
-
 </div>
 
 <a href="#top" class="back-to-top-float">↑</a>
