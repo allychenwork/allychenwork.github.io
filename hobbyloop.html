@@ -78,11 +78,6 @@
             <p>​​​​​​When developing the concept for this app, I started with a specific target audience of people who want to learn K-Pop dances. I started by creating a visual model of the potential stakeholders. </p>
         </section>
 
-        <!-- <div class="image-grid">
-            <img src="assets/hobbyloop/01-ideation/01-stakeholders.png" alt="Stakeholder Map" class="zoomable" onclick="openLightbox(this)">
-            <img src="assets/hobbyloop/01-ideation/02-visual-diagram.png" alt="Visual Diagram" class="zoomable" onclick="openLightbox(this)">
-        </div> -->
-
         <div class="image-grid">
             <img src="assets/hobbyloop/01-ideation/01-stakeholders.png"
                 alt="Stakeholder Map"
@@ -96,6 +91,60 @@
                 data-gallery="ideation"
                 onclick="openLightbox(this)">
         </div>
+
+        <section class="content-section">
+            <h2>Formation</h2>
+            <p>​​​​​​In order to be more inclusive of my class, I decided to broaden my target audience to anyone who wants to get the inside scoop about activities for any hobby.</p>
+            <p>I chose the name and tagline "HobbyLoop: Be in the loop for your favorite hobbies." I chose to use the Bellota font for the curviness to represent being "in the loop", but I decided to replace the H and L with cursive I created using the pen tool so that it flows nicely.</p>
+        </section>
+
+        <div class="image-grid">
+            <img src="assets/hobbyloop/02-formation/01-logo.png"
+                alt="Logo 1"
+                class="zoomable"
+                data-gallery="formation"
+                onclick="openLightbox(this)">
+
+            <img src="assets/hobbyloop/02-formation/02-logo.png"
+                alt="Logo 2"
+                class="zoomable"
+                data-gallery="formation"
+                onclick="openLightbox(this)">
+        </div>
+
+        <section class="content-section">
+            <h2>Pitch</h2>
+            <p>The next step was to pitch the idea to the class in hopes of being in the top 5 out of 20 pitches to be selected. My pitch deck consists of the Visual Value Proposition for HobbyLoop as well as an Elevator Pitch and Competitive Analysis. Spoiler alert: My project idea was selected! 🤩</p>
+        </section>
+
+        <div class="image-grid">
+            <img src="assets/hobbyloop/03-pitch/01.png"
+                alt="Pitch 1"
+                class="zoomable"
+                data-gallery="pitch"
+                onclick="openLightbox(this)">
+
+            <img src="assets/hobbyloop/03-pitch/02.png"
+                alt="Pitch 2"
+                class="zoomable"
+                data-gallery="pitch"
+                onclick="openLightbox(this)">
+        </div>
+
+        <section class="content-section">
+            <h2>Epics, Features, and User Stories</h2>
+            <p>After completing a Team Alignment Canvas assignment and getting to know my team, we jumped straight into listing out potential features and user stories and categorizing them into epics. Then, we ranked them from least to most important in terms of priority.</p>
+        </section>
+
+        <iframe
+            src="https://docs.google.com/spreadsheets/d/10u-SrLzdK5AKJMkLhIn-pdkeYqVKf59y_8b6sP9JOPo/pubhtml?widget=true&amp;headers=false"
+            width="100%"
+            height="500"
+            style="border:0;">
+        </iframe>
+
+
+
 
 
 
@@ -116,8 +165,8 @@
 
 </div>
 
-<div id="lightbox" onclick="closeLightbox(event)">
-
+<div id="lightbox" onclick="closeLightbox()">
+// removed the (event) parameter for click anywhere to close
     <div id="lightbox-track">
         <img id="lightbox-img">
     </div>
