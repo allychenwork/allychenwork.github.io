@@ -122,6 +122,7 @@ function openLightbox(img) {
     const lightbox = document.getElementById("lightbox");
 
     showImage();
+    updateLightboxUI();
 
     lightbox.classList.add("active");
     document.body.style.overflow = "hidden";
@@ -136,6 +137,20 @@ function showImage() {
 
     // updateNavButtons();
     renderDots();
+}
+
+function updateLightboxUI() {
+    const arrows = document.querySelector(".lightbox-controls");
+    const dots = document.getElementById("lightbox-dots");
+
+    if (!currentGallery || currentGallery.length <= 1) {
+        arrows.style.display = "none";
+        dots.style.display = "none";
+        return;
+    }
+
+    arrows.style.display = "flex";
+    dots.style.display = "flex";
 }
 
 function closeLightbox(e) {
@@ -205,6 +220,14 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight") nextImage();
     if (e.key === "ArrowLeft") prevImage();
     if (e.key === "Escape") closeLightbox();
+});
+
+document.querySelectorAll(".image-grid").forEach(grid => {
+    const images = grid.querySelectorAll("img");
+
+    if (images.length === 1) {
+        grid.classList.add("single");
+    }
 });
 
 // Mobile swipe lightbox navigation
