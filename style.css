@@ -182,6 +182,7 @@ nav {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
 
     padding: 14px 26px;
 
@@ -217,7 +218,7 @@ nav {
 /* SECONDARY LINK (Explore Projects) */
 .secondary-link {
     display: inline-block;
-    margin-left: 18px;
+    margin: 18px;
 
     font-size: 15px;
     font-weight: 600;
@@ -227,12 +228,37 @@ nav {
 
     text-decoration: none;
 
-    /* transition: color 0.2s ease; */
+    position: relative; /* needed for underline */
 }
 
+/* animated underline */
+.secondary-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+    width: 100%;
+    height: 1px;
+
+    background: currentColor;
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.25s ease;
+}
+
+/* hover state */
 .secondary-link:hover {
     color: var(--text);
 }
+
+/* animate underline in */
+.secondary-link:hover::after {
+    transform: scaleX(1);
+}
+
 
 /* AVATAR (CLICKABLE) */
 .avatar-container {
@@ -272,6 +298,10 @@ nav {
 }
 
 #projects {
+    scroll-margin-top: 120px;
+}
+
+#resume {
     scroll-margin-top: 120px;
 }
 
@@ -525,6 +555,18 @@ nav {
     border-radius: 12px;
 }
 
+.embed-portrait {
+    max-width: 420px;
+    margin: 0 auto;
+    aspect-ratio: 9 / 19.5;
+}
+
+.embed-portrait iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 /* LIGHTBOX */
 
 .zoomable {
@@ -687,6 +729,169 @@ nav {
     border: 0;
 } */
 
+.project-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 80px 0 40px;
+    padding-top: 24px;
+
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.project-nav-link {
+    font-size: 14px;
+    text-decoration: none;
+    color: inherit;
+
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.project-nav-link:hover {
+    opacity: 1;
+}
+
+/* CONTACT AND RESUME PAGES */
+
+.page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 20px;
+}
+
+.text-page h1 {
+    margin-bottom: 20px;
+}
+
+.text-page p {
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+/* .contact-links a,
+.resume-actions a {
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.8;
+}
+
+.contact-links a:hover,
+.resume-actions a:hover {
+    opacity: 1;
+}
+
+.resume-actions {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0 40px;
+}
+
+.button {
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(0,0,0,0.2);
+    text-decoration: none;
+} */
+
+/* .button.secondary {
+    opacity: 0.7;
+} */
+
+.contact-buttons {
+    display: flex;
+    /* justify-content: center; */
+    gap: 12px; /* 👈 this is the key */
+    flex-wrap: wrap;
+}
+
+/* .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 18px;
+    border-radius: 999px;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    background: var(--text);
+    color: var(--bg);
+
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-btn.secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--text);
+} */
+
+.icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.about-hero {
+    display: flex;
+    gap: 40px;
+    /* align-items: flex-start; */
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* flex-direction: row; */
+}
+
+.about-text {
+    flex: 1;
+}
+
+/* .about-image {
+    order: 2;
+} */
+
+.about-image img {
+    width: 280px;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h1 {
+    margin-top: 0;
+}
+
+.coursework-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 20px;
+}
+
+.course-column h3 {
+    margin-bottom: 12px;
+    font-size: 16px;
+    /* opacity: 0.8; */
+}
+
+.course-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.course-column li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
 /* BACK TO TOP BUTTON */
 
 .back-to-top-float {
@@ -848,5 +1053,31 @@ footer {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
+    }
+
+    /* .project-nav {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    } */
+    
+    .about-hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .about-image,
+    .about-text {
+        order: unset;
+    }
+
+    .coursework-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 }

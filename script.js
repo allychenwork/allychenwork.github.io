@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.style.opacity = 1;
+    document.body.classList.add("loaded");
+});
+
 const body = document.body;
 const nav = document.querySelector("nav");
 const toggle = document.getElementById("themeToggle");
