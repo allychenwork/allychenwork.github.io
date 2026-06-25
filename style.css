@@ -21,6 +21,7 @@ body.dark {
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 18px;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
@@ -53,8 +54,7 @@ body.fade-out {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    font-size: 18px;
+    /* font-size: 18px; */
 
     transition: transform 0.25s ease, background 0.25s ease;
 }
@@ -109,7 +109,7 @@ nav {
 
 .logo {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 22px;
     text-decoration: none;
     color: var(--text);
     letter-spacing: -0.5px;
@@ -168,7 +168,7 @@ nav {
 }
 
 .hero-details {
-    font-size: 16px;
+    /* font-size: 16px; */
     color: var(--muted);
 }
 
@@ -196,7 +196,7 @@ nav {
     color: var(--text);
 
     font-weight: 600;
-    font-size: 15px;
+    font-size: 16px;
 
     text-decoration: none; /* IMPORTANT: removes underline */
 
@@ -220,7 +220,7 @@ nav {
     display: inline-block;
     margin: 18px;
 
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
 
     color: var(--muted);
@@ -281,7 +281,7 @@ nav {
 
 /* SECTION TITLE */
 .section-title {
-    font-size: 17px;
+    /* font-size: 17px; */
     text-transform: uppercase;
     letter-spacing: 3.5px;
     margin-bottom: 40px;
@@ -368,19 +368,19 @@ nav {
 
 .overlay-text {
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 }
 
 /* TEXT */
 .card h3 {
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 600;
     margin-bottom: 4px;
 }
 
 .card p {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--muted);
 }
 
@@ -406,7 +406,7 @@ nav {
 }
 
 .project-tagline {
-    font-size: 17px;
+    /* font-size: 17px; */
     color: var(--text);
     line-height: 1.6;
     max-width: 650px;
@@ -441,7 +441,7 @@ nav {
 }
 
 .meta-item h4 {
-    font-size: 12px;
+    font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-weight: 700;
@@ -449,7 +449,7 @@ nav {
 }
 
 .meta-item p {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text);
 }
 
@@ -472,7 +472,7 @@ nav {
 }
 
 .content-section p {
-    font-size: 16px;
+    /* font-size: 16px; */
     color: var(--text);
     margin-bottom: 20px;
 }
@@ -741,7 +741,7 @@ nav {
 }
 
 .project-nav-link {
-    font-size: 14px;
+    /* font-size: 14px; */
     text-decoration: none;
     color: inherit;
 
@@ -830,7 +830,7 @@ nav {
 } */
 
 .icon {
-    font-size: 16px;
+    /* font-size: 16px; */
     line-height: 1;
 }
 
@@ -876,7 +876,7 @@ nav {
 
 .course-column h3 {
     margin-bottom: 12px;
-    font-size: 16px;
+    /* font-size: 16px; */
     /* opacity: 0.8; */
 }
 
@@ -888,7 +888,7 @@ nav {
 
 .course-column li {
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--muted);
 }
 
@@ -934,7 +934,7 @@ footer {
     border-top: 1px solid var(--border);
     padding: 48px 0;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text);
 }
 
