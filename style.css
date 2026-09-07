@@ -562,6 +562,60 @@ nav {
     border-radius: 10px;
 }
 
+.image-grid-avatar1 {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.image-grid-avatar1 img {
+    height: auto;
+    min-width: 0;
+    display: block;
+    border-radius: 10px;
+}
+
+.image-grid-avatar1 img:nth-child(1) {
+    flex: 1;
+}
+
+.image-grid-avatar1 img:nth-child(2) {
+    flex: 0.563;
+}
+
+.image-grid-avatar1 img:nth-child(3) {
+    flex: 0.562;
+}
+
+.image-grid-avatar1 img:nth-child(4) {
+    flex: 0.8;
+}
+
+.image-grid-avatar1 img:nth-child(5) {
+    flex: 1;
+}
+
+.image-grid-avatar2 {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.image-grid-avatar2 img {
+    display: block;
+    height: auto;
+    min-width: 0;
+    border-radius: 10px;
+}
+
+.image-grid-avatar2 img:nth-child(1) {
+    flex: 0.5625;
+}
+
+.image-grid-avatar2 img:nth-child(2) {
+    flex: 0.6669;
+}
+
 .embed-container {
     position: relative;
     width: 100%;

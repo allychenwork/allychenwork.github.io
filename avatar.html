@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avatar Design | Ally Chen</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="top"></div>
+
+<div class="container">
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="logo">Ally Chen</a>
+
+        <div class="nav-links">
+            <a href="index.html#projects">← Back to Projects</a>
+            <button id="themeToggle" class="theme-btn">🌙</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="project-hero">
+        <div class="project-banner">
+            <picture>
+                <source srcset="assets/avatar/banner-mobile.png" media="(max-width: 768px)">
+                <img src="assets/avatar/banner.png" alt="Avatar Design Banner">
+            </picture>
+        </div>
+
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h4>Role</h4>
+                <p>Designer</p>
+            </div>
+            <div class="meta-item">
+                <h4>Duration</h4>
+                <p>1 week</p>
+            </div>
+            <div class="meta-item">
+                <h4>Tools</h4>
+                <p>Figma</p>
+            </div>
+            <div class="meta-item">
+                <h4>Type</h4>
+                <p>Vector Character Assets</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- OVERVIEW -->
+        <section class="content-section">
+            <h2>Overview</h2>
+            <p>My avatar design is the first self-portrait I created in Figma using the pen tool and gradients.​​​​​​​</p>
+        </section>
+
+        <!-- MOODBOARD -->
+        <section class="content-section">
+            <h2>Moodboard</h2>
+            <p>​​​To start this creative project, I assembled this mood board of what I wanted to take inspiration from in the creation of my avatar. I collected images from some of my favorite video games <i>Valorant</i>, <i>Palworld</i>, and <i>Animal Crossing</i>, as well as some of my favorite web comics <i>unOrdinary</i> and <i>Eaternal Nocturnal</i>. I also included sky pictures for the aesthetic, and the image that my azure bluet logo is based on.</p>
+        </section>
+
+        <div class="image-grid">
+            <img src="assets/avatar/moodboard/moodboard.png"
+                alt="Moodboard"
+                class="zoomable"
+                data-gallery="moodboard"
+                onclick="openLightbox(this)">
+        </div>
+
+        <!-- PROCESS -->
+        <section class="content-section">
+            <h2>Process</h2>
+            <p>I started with my hair with a gradient from black to dark brown, and then I did the rest of the body and face. I debated where to align the gradient for the dress as well, and I went with what looked best to me.</p>
+        </section>
+
+        <div class="image-grid-avatar1">
+            <img src="assets/avatar/process/1c.png"
+                alt="Process: Hair"
+                class="zoomable"
+                data-gallery="process"
+                onclick="openLightbox(this)">
+
+            <img src="assets/avatar/process/2c.png"
+                alt="Process: Body"
+                class="zoomable"
+                data-gallery="process"
+                onclick="openLightbox(this)">
+
+            <img src="assets/avatar/process/3c.png"
+                alt="Process: Face"
+                class="zoomable"
+                data-gallery="process"
+                onclick="openLightbox(this)">
+
+            <img src="assets/avatar/process/4.jpg"
+                alt="Process: Dress"
+                class="zoomable"
+                data-gallery="process"
+                onclick="openLightbox(this)">
+
+            <img src="assets/avatar/process/5c.png"
+                alt="Process: Eyes"
+                class="zoomable"
+                data-gallery="process"
+                onclick="openLightbox(this)">
+        </div>
+
+        <!-- MY AVATAR AND ABOUT ME -->
+        <section class="content-section">
+            <h2>My Avatar and About Me</h2>
+            <p>Here is the final product!</p>
+        </section>
+
+        <div class="image-grid-avatar2">
+            <img src="assets/avatar/final/ally_avatar_sig.png"
+                alt="My Avatar"
+                class="zoomable"
+                data-gallery="final"
+                onclick="openLightbox(this)">
+
+            <img src="assets/avatar/final/ally_about.png"
+                alt="About Me"
+                class="zoomable"
+                data-gallery="final"
+                onclick="openLightbox(this)">
+        </div>
+
+        <!-- REFLECTION -->
+        <section class="content-section">
+            <h2>Reflection</h2>
+            <p>I am so grateful to have the opportunity to express my creativity on an assignment like this one. Being able to combine my love for the video game Animal Crossing and my UI/UX design skills I learned in my UX Design class in this hotel accommodations app made this an incredibly fun project.</p>
+        </section>
+
+        <div class="project-nav">
+            <a class="project-nav-link prev" href="weddings.html">
+                ← Wonderful Weddings
+            </a>
+
+            <a class="project-nav-link next" href="avatar.html">
+                Avatar Design →
+            </a>
+        </div>
+
+    </main>
+
+</div>
+
+<div id="lightbox" onclick="closeLightbox()">
+    <div id="lightbox-track">
+        <img id="lightbox-img">
+    </div>
+
+    <div id="lightbox-dots"></div>
+
+    <div class="lightbox-controls" onclick="event.stopPropagation()">
+        <button class="nav" onclick="prevImage()">‹</button>
+        <button class="nav" onclick="nextImage()">›</button>
+    </div>
+</div>
+
+<a href="#top" class="back-to-top-float">↑</a>
+
+<footer>
+    <div class="container">
+        © <span id="year"></span> Ally Chen. All rights reserved.
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
