@@ -523,7 +523,28 @@ nav {
     gap: 10px;
 }
 
-.image-grid img {
+.image-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.image-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.image-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.image-grid img,
+.image-grid-2 img,
+.image-grid-4 img,
+.image-grid-5 img {
     width: 100%;
     height: auto;
     display: block;
