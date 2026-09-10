@@ -19,9 +19,9 @@
         <a href="index.html" class="logo">Ally Chen</a>
 
         <div class="nav-links">
-            <a href="index.html#projects">Projects</a>
+            <!-- <a href="index.html#projects">Projects</a> -->
             <a href="about.html" class="active">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="resume.html">Resume</a>
             <button id="themeToggle" class="theme-btn">🌙</button>
         </div>
     </nav>
@@ -45,11 +45,43 @@
 
             </div>
 
-            <div class="about-image">
+            <!-- <div class="about-image">
                 <img src="assets/ally-chen-photo.jpg" alt="Photo of Ally">
+            </div> -->
+
+            <div class="about-image">
+                <img src="assets/ally-chen-photo.jpg"
+                    alt="Photo of Ally"
+                    class="zoomable"
+                    data-gallery="ally"
+                    onclick="openLightbox(this)">
             </div>
 
-        </section><br>
+        </section>
+
+        <h2>Let's Connect</h2>
+
+            <p>Feel free to reach out for opportunities or collaboration.</p>
+
+            <div class="contact-buttons">
+
+                <a href="mailto:allychenwork@gmail.com" class="resume-btn">
+                    <span class="icon">✉</span>
+                    <span>Email</span>
+                </a>
+
+                <a href="https://linkedin.com/in/allychenwork"
+                class="resume-btn"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                    <span class="icon">in</span>
+                    <span>LinkedIn</span>
+                </a>
+
+            </div>
+
+            <br>
 
         <!-- COURSEWORK -->
         <section class="coursework-section">
@@ -78,7 +110,6 @@
                             <li>Computer Game Development</li>
                             <li>User Interaction Software</li>
                             <li>Project in User Interaction Software</li>
-                            <li>Game Design Fundamentals</li>
                         </ul>
                 </div>
 
@@ -98,6 +129,7 @@
                             <li>Internet Studies</li>
                             <li>Advanced Video Production</li>
                             <li>Design Essentials</li>
+                            <li>Game Design Fundamentals</li>
                         </ul>
                 </div>
 
@@ -146,6 +178,19 @@
 
     </main>
 
+</div>
+
+<div id="lightbox" onclick="closeLightbox()">
+    <div id="lightbox-track">
+        <img id="lightbox-img">
+    </div>
+
+    <div id="lightbox-dots"></div>
+
+    <div class="lightbox-controls" onclick="event.stopPropagation()">
+        <button class="nav" onclick="prevImage()">‹</button>
+        <button class="nav" onclick="nextImage()">›</button>
+    </div>
 </div>
 
 <a href="#top" class="back-to-top-float">↑</a>
