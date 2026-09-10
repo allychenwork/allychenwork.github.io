@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ally Chen | High Roller</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="top"></div>
+
+<div class="container">
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="logo">Ally Chen</a>
+
+        <div class="nav-links">
+            <a href="gamedesign.html">← Back to Projects</a>
+            <button id="themeToggle" class="theme-btn">🌙</button>
+        </div>
+    </nav>
+
+
+    <!-- PROJECT NAVIGATION -->
+    <div class="project-nav">
+        <a class="project-nav-link prev" href="dgitl.html">
+            ← DGITL
+        </a>
+
+        <a class="project-nav-link next" href="big.html">
+            BIG: Beautiful Incredible Galaxies →
+        </a>
+    </div>
+
+</main>
+
+<div id="lightbox" onclick="closeLightbox()">
+    <div id="lightbox-track">
+        <img id="lightbox-img">
+    </div>
+
+    <div id="lightbox-dots"></div>
+
+    <div class="lightbox-controls" onclick="event.stopPropagation()">
+        <button class="nav" onclick="prevImage()">‹</button>
+        <button class="nav" onclick="nextImage()">›</button>
+    </div>
+</div>
+
+<a href="#top" class="back-to-top-float">↑</a>
+
+<footer>
+    <div class="container">
+        © <span id="year"></span> Ally Chen. All rights reserved.
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
