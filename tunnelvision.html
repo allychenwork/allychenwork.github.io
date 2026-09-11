@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ally Chen | Tunnel Vision</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="top"></div>
+
+<div class="container">
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="logo">Ally Chen</a>
+
+        <div class="nav-links">
+            <a href="gamedesign.html">← Back to Projects</a>
+            <button id="themeToggle" class="theme-btn">🌙</button>
+        </div>
+    </nav>
+
+<!-- HERO -->
+<header class="project-hero">
+    <div class="project-banner">
+        <picture>
+            <source srcset="assets/tunnelvision/banner-mobile.png" media="(max-width: 768px)">
+            <img src="assets/tunnelvision/banner.png" alt="Tunnel Vision Banner">
+        </picture>
+    </div>
+
+    <div class="meta-grid">
+        <div class="meta-item">
+            <h4>Role</h4>
+            <p>Game Designer</p>
+        </div>
+        <div class="meta-item">
+            <h4>Duration</h4>
+            <p>10 weeks</p>
+        </div>
+        <div class="meta-item">
+            <h4>Tools</h4>
+            <p>Discord, Lucidchart</p>
+        </div>
+        <div class="meta-item">
+            <h4>Type</h4>
+            <p>Interactive Narrative Game</p>
+        </div>
+    </div>
+</header>
+
+
+<main>
+
+    <!-- OVERVIEW -->
+    <section class="content-section">
+        <h2>Overview</h2>
+
+        <p>
+            Tunnel Vision is a horror-themed “Choose Your Own Adventure” game
+            demo designed as an interactive narrative experience. Instead of
+            using a traditional game engine, we built the game inside Discord,
+            turning text channels, reactions, and role permissions into the
+            game's branching structure.
+        </p>
+
+        <p>
+            Players progress through the story by making choices through emoji
+            reactions. Each choice grants access to different Discord channels,
+            allowing players to follow different branches of the narrative and
+            reach alternate endings.
+        </p>
+    </section>
+
+
+    <!-- CONCEPT -->
+    <section class="content-section">
+        <h2>Concept</h2>
+
+        <p>
+            We wanted to create a game that could be experienced remotely and
+            shared easily with friends. Because the project was being developed
+            during the pandemic, accessibility and ease of implementation were
+            important constraints.
+        </p>
+
+        <p>
+            We chose a horror story inspired by the UCI tunnels and structured it
+            around player decisions, creating a narrative where choices could
+            change the direction and outcome of the story.
+        </p>
+    </section>
+
+
+    <!-- DECISION TREE -->
+    <section class="content-section">
+        <h2>Interactive Narrative</h2>
+
+        <p>
+            Before implementing the story, we mapped out the branching structure
+            using a decision tree. Each branch represented a different player
+            choice and determined which scene the player would encounter next.
+        </p>
+
+        <p>
+            This helped us visualize the overall flow of the story, identify
+            branching points, and organize the alternate endings before moving
+            into implementation.
+        </p>
+    </section>
+
+    <div class="image-grid">
+        <img src="assets/tunnelvision/decision-tree.png"
+            alt="Tunnel Vision decision tree showing branching narrative"
+            class="zoomable"
+            data-gallery="decision-tree"
+            onclick="openLightbox(this)">
+    </div>
+
+
+    <!-- STORY DEVELOPMENT -->
+    <section class="content-section">
+        <h2>Story Development</h2>
+
+        <p>
+            After establishing the story structure, we collaborated on a
+            multi-scene script and divided the narrative into individual scenes.
+            We designed decision points that would allow players to take
+            different paths through the story rather than following a single
+            linear progression.
+        </p>
+
+        <p>
+            The final script contained two acts and more than 30 pages of
+            narrative content, which we then translated into individual Discord
+            channels.
+        </p>
+    </section>
+
+    <div class="image-grid-2">
+        <img src="assets/tunnelvision/script-sample.png"
+            alt="Sample page from the Tunnel Vision script"
+            class="zoomable"
+            data-gallery="story-development"
+            onclick="openLightbox(this)">
+
+        <img src="assets/tunnelvision/discord.png"
+            alt="Tunnel Vision Discord game"
+            class="zoomable"
+            data-gallery="story-development"
+            onclick="openLightbox(this)">
+    </div>
+
+
+    <!-- IMPLEMENTATION -->
+    <section class="content-section">
+        <h2>Implementation</h2>
+
+        <p>
+            We originally considered building the game as a traditional HTML/CSS
+            visual novel, but the implementation scope was too large for our
+            timeline. We also considered Ren'Py and Inform 7, but both would
+            require additional time to learn new tools and documentation.
+        </p>
+
+        <p>
+            We ultimately chose Discord because its existing channel and
+            permission system could be adapted into a branching game structure.
+            We used Carl Bot to assign roles based on emoji reactions, allowing
+            player choices to unlock different channels and story branches.
+        </p>
+    </section>
+
+
+    <!-- PLAYER FLOW -->
+    <section class="content-section">
+        <h2>Player Flow</h2>
+
+        <p>
+            Each scene was represented by a Discord text channel. Players read
+            the current section of the story and reacted to a message to make
+            their choice. The reaction triggered a role assignment, which
+            granted access to the corresponding next channel.
+        </p>
+
+        <p>
+            This transformed Discord's existing social features into a simple
+            interactive game system without requiring players to install
+            additional software.
+        </p>
+    </section>
+
+
+    <!-- TESTING & ITERATION -->
+    <section class="content-section">
+        <h2>Testing & Iteration</h2>
+
+        <p>
+            Implementing the game revealed several issues that were difficult to
+            anticipate during planning. Early versions of the Discord bot did
+            not correctly assign access to new channels because it lacked the
+            necessary server permissions.
+        </p>
+
+        <p>
+            We also discovered that overly long messages could prevent the bot
+            from behaving as expected without providing a clear error. These
+            issues required troubleshooting and changes to how we structured and
+            implemented the narrative.
+        </p>
+    </section>
+
+
+    <!-- UX / GAMEPLAY CHALLENGE -->
+    <section class="content-section">
+        <h2>Player Experience Challenges</h2>
+
+        <p>
+            Testing also revealed a usability problem in the Discord format.
+            When players gained access to a new channel, Discord could position
+            them away from the beginning of the narrative, creating the
+            possibility of accidentally seeing spoilers.
+        </p>
+
+        <p>
+            We could not fully control Discord's scrolling behavior, so we added
+            instructions to the game's introduction explaining how players
+            should navigate each new channel.
+        </p>
+    </section>
+
+
+    <!-- FINAL RESULT -->
+    <section class="content-section">
+        <h2>Final Result</h2>
+
+        <p>
+            The completed demo included 21 Discord channels and four alternate
+            endings. Although we originally planned to build a larger story,
+            limiting the project to the first chapter allowed us to complete a
+            functional interactive experience within the available timeline.
+        </p>
+
+        <p>
+            The final implementation combined narrative design, branching
+            choices, and Discord-based interaction into a game that could be
+            played remotely and shared through a familiar platform.
+        </p>
+    </section>
+
+    <div class="image-grid">
+        <img src="assets/tunnelvision/final-demo.png"
+            alt="Tunnel Vision final Discord game demo"
+            class="zoomable"
+            data-gallery="final-result"
+            onclick="openLightbox(this)">
+    </div>
+
+
+    <!-- GAME DEMO -->
+    <section class="content-section">
+        <h2>Game Demo</h2>
+
+        <p>
+            Explore the original Tunnel Vision game demo and experience the
+            branching story through the Discord server.
+        </p>
+
+        <a href="https://discord.gg/SsK6j4s3We"
+            class="resume-btn"
+            target="_blank"
+            rel="noopener noreferrer">
+            Play Tunnel Vision ↗
+        </a>
+    </section>
+
+
+    <!-- DOCUMENTATION -->
+    <section class="content-section">
+        <h2>Design Documentation</h2>
+
+        <p>
+            The project documentation includes the final decision tree, script,
+            implementation details, project planning, and team process.
+        </p>
+
+        <div class="document-links">
+            <a href="assets/tunnelvision/script.pdf"
+                class="resume-btn"
+                target="_blank"
+                rel="noopener noreferrer">
+                View Script ↗
+            </a>
+
+            <a href="assets/tunnelvision/decision-tree.png"
+                class="resume-btn"
+                target="_blank"
+                rel="noopener noreferrer">
+                View Decision Tree ↗
+            </a>
+        </div>
+    </section>
+
+
+    <!-- REFLECTION -->
+    <section class="content-section">
+        <h2>Reflection</h2>
+
+        <p>
+            Tunnel Vision taught me how the platform itself can become part of
+            the game's design. Instead of building a traditional visual novel,
+            we adapted Discord's existing communication and permission systems
+            into a branching narrative framework.
+        </p>
+
+        <p>
+            The project also reinforced the importance of designing within
+            realistic constraints. By changing our implementation approach, we
+            were able to spend more time developing the story and interactive
+            structure rather than learning a new game engine.
+        </p>
+    </section>
+
+
+    <!-- PROJECT NAVIGATION -->
+    <div class="project-nav">
+        <a class="project-nav-link prev" href="big.html">
+            ← BIG: Beautiful Incredible Galaxies
+        </a>
+
+        <a class="project-nav-link next" href="dgitl.html">
+            Don’t Go Into The Light →
+        </a>
+    </div>
+
+</main>
+
+<div id="lightbox" onclick="closeLightbox()">
+    <div id="lightbox-track">
+        <img id="lightbox-img">
+    </div>
+
+    <div id="lightbox-dots"></div>
+
+    <div class="lightbox-controls" onclick="event.stopPropagation()">
+        <button class="nav" onclick="prevImage()">‹</button>
+        <button class="nav" onclick="nextImage()">›</button>
+    </div>
+</div>
+
+<a href="#top" class="back-to-top-float">↑</a>
+
+<footer>
+    <div class="container">
+        © <span id="year"></span> Ally Chen. All rights reserved.
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
