@@ -62,8 +62,7 @@
 
         <p>
             Tunnel Vision is a horror-themed “Choose Your Own Adventure” game
-            demo designed as an interactive narrative experience. Instead of
-            using a traditional game engine, we built the game inside Discord,
+            demo designed as an interactive narrative experience. We built the game inside Discord,
             turning text channels, reactions, and role permissions into the
             game's branching structure.
         </p>
@@ -113,11 +112,11 @@
         </p>
     </section>
 
-    <div class="image-grid">
+    <div class="image-grid-small">
         <img src="assets/tunnelvision/decision-tree.png"
             alt="Tunnel Vision decision tree showing branching narrative"
             class="zoomable"
-            data-gallery="decision-tree"
+            data-gallery="tunnel-decision-tree"
             onclick="openLightbox(this)">
     </div>
 
@@ -141,58 +140,13 @@
         </p>
     </section>
 
-    <div class="image-grid-2">
+    <div class="image-grid-small">
         <img src="assets/tunnelvision/script-sample.png"
             alt="Sample page from the Tunnel Vision script"
             class="zoomable"
-            data-gallery="story-development"
-            onclick="openLightbox(this)">
-
-        <img src="assets/tunnelvision/discord.png"
-            alt="Tunnel Vision Discord game"
-            class="zoomable"
-            data-gallery="story-development"
+            data-gallery="tunnel-script"
             onclick="openLightbox(this)">
     </div>
-
-
-    <!-- IMPLEMENTATION -->
-    <section class="content-section">
-        <h2>Implementation</h2>
-
-        <p>
-            We originally considered building the game as a traditional HTML/CSS
-            visual novel, but the implementation scope was too large for our
-            timeline. We also considered Ren'Py and Inform 7, but both would
-            require additional time to learn new tools and documentation.
-        </p>
-
-        <p>
-            We ultimately chose Discord because its existing channel and
-            permission system could be adapted into a branching game structure.
-            We used Carl Bot to assign roles based on emoji reactions, allowing
-            player choices to unlock different channels and story branches.
-        </p>
-    </section>
-
-
-    <!-- PLAYER FLOW -->
-    <section class="content-section">
-        <h2>Player Flow</h2>
-
-        <p>
-            Each scene was represented by a Discord text channel. Players read
-            the current section of the story and reacted to a message to make
-            their choice. The reaction triggered a role assignment, which
-            granted access to the corresponding next channel.
-        </p>
-
-        <p>
-            This transformed Discord's existing social features into a simple
-            interactive game system without requiring players to install
-            additional software.
-        </p>
-    </section>
 
 
     <!-- TESTING & ITERATION -->
@@ -253,54 +207,36 @@
     </section>
 
     <div class="image-grid">
-        <img src="assets/tunnelvision/final-demo.png"
-            alt="Tunnel Vision final Discord game demo"
+        <img src="assets/tunnelvision/discord.png"
+            alt="Tunnel Vision Discord game"
             class="zoomable"
-            data-gallery="final-result"
+            data-gallery="tunnel-discord"
             onclick="openLightbox(this)">
     </div>
 
 
-    <!-- GAME DEMO -->
+    <!-- GAME DEMO & SCRIPT -->
     <section class="content-section">
-        <h2>Game Demo</h2>
+        <h2>Game Demo & Script</h2>
 
         <p>
-            Explore the original Tunnel Vision game demo and experience the
-            branching story through the Discord server.
-        </p>
-
-        <a href="https://discord.gg/SsK6j4s3We"
-            class="resume-btn"
-            target="_blank"
-            rel="noopener noreferrer">
-            Play Tunnel Vision ↗
-        </a>
-    </section>
-
-
-    <!-- DOCUMENTATION -->
-    <section class="content-section">
-        <h2>Design Documentation</h2>
-
-        <p>
-            The project documentation includes the final decision tree, script,
-            implementation details, project planning, and team process.
+            Experience the original Tunnel Vision demo and explore the script
+            behind its branching narrative.
         </p>
 
         <div class="document-links">
+            <a href="https://discord.gg/SsK6j4s3We"
+                class="resume-btn"
+                target="_blank"
+                rel="noopener noreferrer">
+                Play Tunnel Vision ↗
+            </a>
+
             <a href="assets/tunnelvision/script.pdf"
                 class="resume-btn"
                 target="_blank"
                 rel="noopener noreferrer">
                 View Script ↗
-            </a>
-
-            <a href="assets/tunnelvision/decision-tree.png"
-                class="resume-btn"
-                target="_blank"
-                rel="noopener noreferrer">
-                View Decision Tree ↗
             </a>
         </div>
     </section>
@@ -311,17 +247,22 @@
         <h2>Reflection</h2>
 
         <p>
-            Tunnel Vision taught me how the platform itself can become part of
-            the game's design. Instead of building a traditional visual novel,
-            we adapted Discord's existing communication and permission systems
-            into a branching narrative framework.
+            The biggest lesson I took away from Tunnel Vision was how much planning 
+            goes into creating a branching narrative. Developing the decision tree 
+            and script helped me understand how each choice needs to feel intentional 
+            while still leading to a cohesive overall story. I also learned that implementing 
+            an interactive story requires thinking beyond the narrative itself and considering 
+            how players will navigate, understand, and experience each branch.
         </p>
 
         <p>
-            The project also reinforced the importance of designing within
-            realistic constraints. By changing our implementation approach, we
-            were able to spend more time developing the story and interactive
-            structure rather than learning a new game engine.
+            The project also showed me the importance of testing an experience from 
+            the player's perspective. Issues such as navigating between Discord channels 
+            and accidentally encountering spoilers were difficult to recognize during 
+            development but became much more apparent when considering how someone unfamiliar 
+            with the game would interact with it. This taught me to pay closer attention to 
+            the gap between how a designer expects an experience to work and how a player 
+            actually experiences it.
         </p>
     </section>
 
