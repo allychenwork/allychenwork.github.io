@@ -880,6 +880,13 @@ nav {
 
 /* CONTACT AND RESUME PAGES */
 
+.resume-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
 .page {
     max-width: 900px;
     margin: 0 auto;
